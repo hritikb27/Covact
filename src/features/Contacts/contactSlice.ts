@@ -1,21 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../../app/store'
-
-// Define a type for the slice state
-interface ContactState {
-    firstName: string,
-    lastName: string,
-    status: boolean,
-    contact: number
-}
+import { ContactState } from '../../types/contactType';
 
 // Define the initial state using that type
-const initialState: ContactState[] = [{
-    contact: 0,
-    firstName: 'John',
-    lastName: 'Doe',
-    status: true,
-}]
+const initialState: ContactState[] = []
 
 export const contactSlice = createSlice({
     name: 'contacts',
@@ -24,11 +12,14 @@ export const contactSlice = createSlice({
         addContact: (state, action: PayloadAction<ContactState>) => {
             state.push(action.payload);
         },
+        updateContacts: (state, action: PayloadAction<ContactState[]>) => {
+            return action.payload;
+        }
     }
 });
 
 // this is for dispatch
-export const { addContact } = contactSlice.actions;
+export const { addContact, updateContacts } = contactSlice.actions;
 export const selectCount = (state: RootState) => state.contacts
 
 // this is for configureStore
