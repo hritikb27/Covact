@@ -1,28 +1,15 @@
-import React, { Fragment, useState } from 'react'
-import { Dialog, Menu, Transition } from '@headlessui/react'
+import React, { Fragment } from 'react'
+import { Dialog, Transition } from '@headlessui/react'
 import {
-    Bars3Icon,
-    BellIcon,
-    CalendarIcon,
     ChartPieIcon,
-    Cog6ToothIcon,
-    DocumentDuplicateIcon,
-    FolderIcon,
-    HomeIcon,
     UsersIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline'
 import classNames from '../../utils/classNames'
-import { useLocation } from 'react-router-dom'
 
 const navigation = [
     { name: 'Contact', href: '/', icon: UsersIcon },
     { name: 'Charts and Maps', href: '/charts', icon: ChartPieIcon },
-]
-const teams = [
-    { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },
-    { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },
-    { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
 ]
 
 interface SidebarProps {
@@ -31,13 +18,11 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
-    // const location = useLocation()
-    console.log('href: ', window.location.href)
 
     return (
         <>
             <Transition.Root show={sidebarOpen} as={Fragment}>
-                <Dialog as="div" className="relative z-50 lg:hidden" onClose={setSidebarOpen}>
+                <Dialog as="div" className="relative z-100 lg:hidden" onClose={setSidebarOpen}>
                     <Transition.Child
                         as={Fragment}
                         enter="transition-opacity ease-linear duration-300"
@@ -79,14 +64,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                 </Transition.Child>
                                 {/* Sidebar component, swap this element with another sidebar if you like */}
                                 <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-indigo-600 px-6 pb-4">
-                                    <div className="flex h-16 shrink-0 items-center">
-                                        <img
-                                            className="h-8 w-auto"
-                                            src="https://tailwindui.com/img/logos/mark.svg?color=white"
-                                            alt="Your Company"
-                                        />
-                                    </div>
-                                    <nav className="flex flex-1 flex-col">
+                                    <nav className="flex flex-1 mt-12 flex-col">
                                         <ul role="list" className="flex flex-1 flex-col gap-y-7">
                                             <li>
                                                 <ul role="list" className="-mx-2 space-y-1">
@@ -114,41 +92,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                                     ))}
                                                 </ul>
                                             </li>
-                                            <li>
-                                                <div className="text-xs font-semibold leading-6 text-indigo-200">Your teams</div>
-                                                <ul role="list" className="-mx-2 mt-2 space-y-1">
-                                                    {teams.map((team) => (
-                                                        <li key={team.name}>
-                                                            <a
-                                                                href={team.href}
-                                                                className={classNames(
-                                                                    window.location.href === `${process.env.REACT_APP_URL}${team.href}`
-                                                                        ? 'bg-indigo-700 text-white'
-                                                                        : 'text-indigo-200 hover:text-white hover:bg-indigo-700',
-                                                                    'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
-                                                                )}
-                                                            >
-                                                                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-indigo-400 bg-indigo-500 text-[0.625rem] font-medium text-white">
-                                                                    {team.initial}
-                                                                </span>
-                                                                <span className="truncate">{team.name}</span>
-                                                            </a>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </li>
-                                            <li className="mt-auto">
-                                                <a
-                                                    href="#"
-                                                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-indigo-700 hover:text-white"
-                                                >
-                                                    <Cog6ToothIcon
-                                                        className="h-6 w-6 shrink-0 text-indigo-200 group-hover:text-white"
-                                                        aria-hidden="true"
-                                                    />
-                                                    Settings
-                                                </a>
-                                            </li>
+                                           
+                                            
                                         </ul>
                                     </nav>
                                 </div>

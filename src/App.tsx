@@ -7,6 +7,9 @@ import { store } from './app/store';
 import Layout from './components/Layout';
 import Contacts from './components/Contacts';
 import Charts from './components/Charts';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient();
 
 function App() {
   const routes = [
@@ -17,13 +20,15 @@ function App() {
     {
       path: "/charts",
       element: <Charts />,
-    }, 
+    },
   ]
   return (<Provider store={store}>
+    <QueryClientProvider client={queryClient}>
       <Layout>
-      <RouterProvider router={createBrowserRouter(routes)} />
+        <RouterProvider router={createBrowserRouter(routes)} />
       </Layout>
-    </Provider>);
+    </QueryClientProvider>
+  </Provider>);
 }
 
 export default App;

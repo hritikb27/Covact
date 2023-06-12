@@ -79,6 +79,7 @@ const ContactForm = ({ open, setOpen, contact }: ContactFormProps) => {
                 status: state.status
             }))
         }
+        setOpen(false);
     }
 
     return (<Transition.Root show={open} as={Fragment}>

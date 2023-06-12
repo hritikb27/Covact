@@ -17,9 +17,9 @@ const Contacts = () => {
                 {contacts.map(contact => {
                     return <Card contact={contact} />
                 })}
-            </div> : <div className="w-full h-[500px] text-black bg-gray-200 gap-5 rounded flex justify-center items-center">
+            </div> : <div className="w-full h-[500px] text-black bg-gray-200 gap-5 rounded flex flex-col sm:flex-row justify-center items-center">
                 <XCircleIcon className="w-16 h-16" />
-                <h1 className="text-2xl font-bold">No Contacts Found <br/> Please add contact from <br/> Create Contact Button</h1>
+                <h1 className="sm:text-2xl font-bold">No Contacts Found <br/> Please add contact from <br/> Create Contact Button</h1>
                 </div>}
         </div>
     )
