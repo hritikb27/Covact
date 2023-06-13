@@ -1,5 +1,5 @@
 
-# Application Documentation: COVID Data Visualization and Contact Management
+# Covact Application Documentation: COVID Data Visualization and Contact Management
 
 This documentation provides an overview and usage instructions for the COVID Data Visualization and Contact Management application. The application allows users to visualize COVID-19 cases data using line graph and a Leaflet map, as well as manage contacts with basic information such as first name, last name, and status (active/inactive). The application utilizes technologies such as Redux for contact data management, React Query for data fetching, React Leaflet for map rendering, and Chart.js for chart visualization.
 
@@ -164,7 +164,7 @@ The COVID Data Visualization and Contact Management application is built using t
 
 To run the COVID Data Visualization and Contact Management application locally, follow these steps:
 
- 1. Clone the project repository from GitHub: git clone <https://github.com/hritikb27/ContactManagement>
+ 1. Clone the project repository from GitHub: git clone <https://github.com/hritikb27/Covact>
  2. Navigate to the project directory: `cd ContactManagement`
  3. Install the project dependencies: `npm install`
  4. Start the development server: `npm start`
