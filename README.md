@@ -1,46 +1,67 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Application Documentation: COVID Data Visualization and Contact Management
 
-## Available Scripts
+This documentation provides an overview and usage instructions for the COVID Data Visualization and Contact Management application. The application allows users to visualize COVID-19 cases data using line graph and a Leaflet map, as well as manage contacts with basic information such as first name, last name, and status (active/inactive). The application utilizes technologies such as Redux for contact data management, React Query for data fetching, React Leaflet for map rendering, and Chart.js for chart visualization.
 
-In the project directory, you can run:
+  
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 1. COVID-19 Data Visualization
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  
 
-### `npm test`
+ - Line Graph: The application fetches COVID-19 historical cases data
+   from an external API and displays it using a line graph. The line
+   graph showcases the fluctuation of cases over time, including the
+   number of cases, deaths, and recoveries.
+ - Leaflet Map: The application utilizes the Leaflet library to render
+   an interactive map with markers representing COVID-19 data for
+   different regions or countries.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Contact Management
 
-### `npm run build`
+  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ - Contact Form: Users can add new contacts by providing their first   
+   name, last name, and status (active/inactive). The form allows users 
+   to enter contact information and submit it for storage and display.
+ - Contact List: The application displays a list of all contacts entered
+   by the user. The list includes the first name, last name, and status 
+   of each contact.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The COVID Data Visualization and Contact Management application is built using the following technologies:
 
-### `npm run eject`
+ - **React:** A JavaScript library for building user interfaces.
+ - **Create React App:** A tool for bootstrapping React applications with a
+   predefined project structure.
+ - **Tailwind CSS:** A utility-first CSS framework for styling user
+   interfaces.
+ - **TypeScript:** A statically typed superset of JavaScript that helps
+   catch errors and provides better tooling for code development.
+ - **Redux Toolkit:** A library that simplifies Redux development by providing utility functions and best practices.
+ - **React Query:** A library for data fetching and caching in React
+   applications.
+ - **Chart.js:** A JavaScript library for creating interactive charts and
+   graphs.
+ - **React Leaflet:** A library that integrates Leaflet maps into React
+   applications.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Running the Application
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To run the COVID Data Visualization and Contact Management application locally, follow these steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+ 1. Clone the project repository from GitHub: git clone <https://github.com/hritikb27/ContactManagement>
+ 2. Navigate to the project directory: `cd ContactManagement`
+ 3. Install the project dependencies: `npm install`
+ 4. Start the development server: `npm start`
+ 5. Open a web browser and visit http://localhost:3000 to access the
+    application.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Conclusion
 
-## Learn More
+The COVID Data Visualization and Contact Management application provides users with an interactive way to visualize COVID-19 cases data using line graphs and a Leaflet map. Additionally, users can manage their contacts by adding new contacts and viewing the contact list. The application leverages technologies such as Redux, React Query, React Leaflet, and Chart.js to provide a seamless user experience.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+I hope this documentation helps you understand and use the application effectively. If you have any further questions or issues, please don't hesitate to reach out for support.
