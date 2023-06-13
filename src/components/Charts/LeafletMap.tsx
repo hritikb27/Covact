@@ -5,10 +5,7 @@ import markerIcon from './marker.png';
 import { useCountryCases } from '../../hooks/coronaApi';
 const LeafletMap = () => {
     const { data, error, isLoading } = useCountryCases();
-    
-    useEffect(() => {
-       if(data) console.log(data);
-    }, [data]);
+
     const customMarker = L.icon({
         iconUrl: markerIcon,
         iconSize: [20, 25],
