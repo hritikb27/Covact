@@ -14,6 +14,7 @@ import {
 } from 'chart.js';
 import LeafLetMap from "./LeafletMap";
 import LoadingModal from "../Loading/LoadingModal";
+import { allCasesType } from "../../types/chartType";
 
 ChartJS.register(
     CategoryScale,
@@ -26,22 +27,17 @@ ChartJS.register(
 );
 
 const Charts = () => {
-    const [allCases, setAllCases] = useState<{
-        labels: string[];
-        datasets: {
-            label: string;
-            data: unknown[];
-            borderColor: string;
-            fill: boolean;
-        }[];
-    }>();
+    const [allCases, setAllCases] = useState<allCasesType>();
     const [loading, setLoading] = useState(false);
-    // Using the hook
+    // use react-query hook to fetch data
     const { data, error, isLoading } = useAllCases();
 
     useEffect(() => {
+        // set loading state to true if data is not available
         if (isLoading && !data) setLoading(true);
+        // set loading state to false if data is available
         if (!isLoading && data) setLoading(false);
+        // set data to allCases state if data is available
         if (data) {
             const lineGraphData = {
                 labels: Object.keys(data.cases),

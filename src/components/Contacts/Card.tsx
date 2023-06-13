@@ -14,6 +14,7 @@ const Card = ({ contact }: CardProps) => {
     const dispatch = useAppDispatch();
 
     const handleDelete = (contact: ContactState) => {
+        // delete contact from redux store
         const newContacts = contacts.filter(item => item.id !== contact.id)
         dispatch(updateContacts(newContacts))
     }

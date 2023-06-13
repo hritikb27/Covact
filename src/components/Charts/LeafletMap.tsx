@@ -4,8 +4,8 @@ import L from 'leaflet';
 import markerIcon from './marker.png';
 import { useCountryCases } from '../../hooks/coronaApi';
 const LeafletMap = () => {
-
     const { data, error, isLoading } = useCountryCases();
+    
     useEffect(() => {
        if(data) console.log(data);
     }, [data]);
